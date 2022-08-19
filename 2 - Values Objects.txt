@@ -1,0 +1,2 @@
+* Quando vc se preocupa apenas com os atributos de um elemento de um model, classifique isso como um Value Object
+* Trate o Value Object como imutavel.(representa apenas uma propriedade)

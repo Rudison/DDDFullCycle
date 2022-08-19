@@ -1,0 +1,7 @@
+Entidade é algo unico que é capaz de ser alterado de forma continua durante um longo periodo de tempo.
+
+Entidade é algo que possui uma continuidade em seu ciclo de vida e pode ser distinguida independente dos atributos
+que são importantes para a aplicação do usuário.
+
+Entidade é algo que tem uma identidade.
+

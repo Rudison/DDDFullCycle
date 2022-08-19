@@ -1,0 +1,7 @@
+Um agregado é um conjunto de objetos associados que tratamos como uma unidade para propósito de mudança de dados.
+
+Ex:
+Customer = entity => Consegue existir sem uma orderm
+  |-> Address = Value Object
+Order = entity => nao Consegue existir sem um cliente
+Item = entity => Consegue existir sem uma ordem
