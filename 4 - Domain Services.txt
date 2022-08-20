@@ -1,0 +1,4 @@
+* Quando houver muitos Domain Services em seu projeto, TALVEZ, isso pode
+indicar que seus agregados estao anemicos.
+
+* Domain Services sao Stateless(nenhum dado fica armazenado em um Domain Service)
