@@ -26,6 +26,24 @@ export default class OrderRepository {
     )
   }
 
+  async update(entity: Order): Promise<void> {
+    console.table(entity.items)
+
+    await OrderModel.update(
+      {
+        id: entity.id,
+        customer_id: entity.customerId,
+        total: entity.total(),
+        items: entity.items,
+      },
+      {
+        where: {
+          id: entity.id,
+        },
+      }
+    )
+  }
+
   async find(id: string): Promise<Order> {
     let orderModel
 
@@ -39,7 +57,14 @@ export default class OrderRepository {
     }
 
     const Items = orderModel.items.map(
-      (items) => new OrderItem(items.id, items.name, items.price, items.product_id, items.quantity)
+      (items) =>
+        new OrderItem(
+          items.id,
+          items.name,
+          items.price,
+          items.product_id,
+          items.quantity
+        )
     )
 
     orderModel = new Order(id, orderModel.customer_id, Items)
@@ -57,7 +82,13 @@ export default class OrderRepository {
       //
       const orderItems = orderModels.items.map(
         (items) =>
-          new OrderItem(items.id, items.name, items.price, items.product_id, items.quantity)
+          new OrderItem(
+            items.id,
+            items.name,
+            items.price,
+            items.product_id,
+            items.quantity
+          )
       )
 
       return new Order(orderModels.id, orderModels.customer_id, orderItems)

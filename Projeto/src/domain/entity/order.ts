@@ -42,6 +42,15 @@ export default class Order {
     return true
   }
 
+  updateItems(orderItems: OrderItem[]): void {
+    this._items = orderItems
+  }
+
+  addItem(item: OrderItem): void {
+    this._items = [...this._items, item]
+    this.validate()
+  }
+
   total(): number {
     return this._items.reduce((acc, item) => acc + item.price, 0)
   }
