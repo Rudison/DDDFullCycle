@@ -1,2 +1,5 @@
 Um repositorio comumente se refere a um local de armazenamento, geralmente considerado um local de segurancao ou
 preservação dos itens nele armazenamento.
+
+* Esses objetos semelhantes a colecoes sao sobre persistencia. TOdo tipo de agregado persistente
+tera um Repositorio. De um modo geral, existe uma relação um-para-um entre um tipo Agregado ou Repositorio.
