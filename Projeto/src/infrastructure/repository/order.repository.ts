@@ -1,9 +1,10 @@
 import Order from '../../domain/entity/order'
 import OrderItem from '../../domain/entity/order_item'
+import OrderRepositoryInterface from '../../domain/repository/order-repository,interface'
 import OrderItemModel from '../db/sequelize/model/order-item.model'
 import OrderModel from '../db/sequelize/model/order.model'
 
-export default class OrderRepository {
+export default class OrderRepository implements OrderRepositoryInterface {
   //
   async create(entity: Order): Promise<void> {
     //
@@ -57,14 +58,7 @@ export default class OrderRepository {
     }
 
     const Items = orderModel.items.map(
-      (items) =>
-        new OrderItem(
-          items.id,
-          items.name,
-          items.price,
-          items.product_id,
-          items.quantity
-        )
+      (items) => new OrderItem(items.id, items.name, items.price, items.product_id, items.quantity)
     )
 
     orderModel = new Order(id, orderModel.customer_id, Items)
@@ -82,13 +76,7 @@ export default class OrderRepository {
       //
       const orderItems = orderModels.items.map(
         (items) =>
-          new OrderItem(
-            items.id,
-            items.name,
-            items.price,
-            items.product_id,
-            items.quantity
-          )
+          new OrderItem(items.id, items.name, items.price, items.product_id, items.quantity)
       )
 
       return new Order(orderModels.id, orderModels.customer_id, orderItems)
