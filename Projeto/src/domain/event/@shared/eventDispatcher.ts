@@ -11,7 +11,7 @@ export default class EventDispacher implements EventDispatcherInterface {
   }
 
   notify(event: eventInterface): void {
-    throw new Error('Method not implemented.')
+    console.log('Method not implemented.')
   }
 
   register(eventName: string, eventHandler: EventHandlerInterface): void {
