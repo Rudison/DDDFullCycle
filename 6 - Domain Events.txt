@@ -1,0 +1,27 @@
+Use um evento de dominio para capturar uma ocorrencia de algo que aconteceu no dominio.
+
+Todo evento deve ser representado em uma ação realizada no "PASSADO".
+ 
+Ex:
+ -UserCreated
+ -OrderPlaced
+ -EmailSent
+
+ Quando Utilizar?
+ Normalmente um Domain Event deve ser utilizado quando queremos notificar outros Bounded Contexts de uma
+ mudança de estado.
+
+Domain Events - Componentes
+
+ -Event (Data e Hora) e o que aconteceu naquele momento
+ -Handler: Executa o processamento quando um evento é chamado.
+    ex: acabei de criar um usuario e disparo um email que aquele evento foi criado.
+ -Event Dispatcher: Responavel por armazenar e executar os handlers de um evento quando ele for disparado
+
+ - Criar um "Event Dispacher"
+ - Criar um "Evento"
+ - Criar um "Handler" para o "Evento"
+ - Registrar o Evento, juntamento com o handler no "Event Dispatcher"
+
+ Agora para disparar um evento, basta executar o metodo "notify" do "Event Dispatcher". Nesse momento todos os handlers
+ registrado no evento serao executados.

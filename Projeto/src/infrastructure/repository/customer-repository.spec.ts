@@ -45,7 +45,7 @@ describe('Customer repository test', () => {
     })
   })
 
-  it('should update a product', async () => {
+  it('should update a costumer', async () => {
     const customerRepository = new CustomerRepository()
     const customer = new Customer('123', 'Customer 1')
     const address = new Address('Street 1', 1, 'Zipcode 1', 'City 1')
@@ -54,30 +54,20 @@ describe('Customer repository test', () => {
     await customerRepository.create(customer)
 
     customer.changeName('Customer 2')
+
     await customerRepository.update(customer)
+
     const customerModel = await CustomerModel.findOne({ where: { id: '123' } })
 
     expect(customerModel.toJSON()).toStrictEqual({
       id: '123',
-      name: customer.name,
+      name: 'Customer 2',
       active: customer.isActive(),
       rewardPoints: customer.rewardPoins,
-      street: address.street,
-      number: address.number,
-      zipcode: address.zipcode,
-      city: address.city,
-    })
-
-    customer.changeName('Product 2')
-
-    await customerRepository.update(customer)
-
-    const customerModel2 = await CustomerModel.findOne({ where: { id: '1' } })
-
-    expect(customerModel2.toJSON()).toStrictEqual({
-      id: '1',
-      name: 'Customer 2',
-      price: 150,
+      street: customer.Address.street,
+      number: customer.Address.number,
+      zipcode: customer.Address.zipcode,
+      city: customer.Address.city,
     })
   })
 
