@@ -1,0 +1,46 @@
+#É uma técnica criada para que posamos entender de forma mais clara o dominio das aplicacoes atraves
+dos eventos gerados por elas.
+
+Normalmente acontece em um formato de workshop. É uma dinamica de grupo denvolvendo "domain experts" e 
+a area tenica.
+
+conseguir mapear e enteder o que acontece no sistema
+Consegue mapear 
+algum evento é importante, tem uma sinalização que uma fase acabou
+
+-- Amarelo ->
+-- Azul    ->
+-- Laranja ->
+
+
+# Comandos e quem realiza os comandos
+
+# Dados para tomada de decisão
+
+# Cronologia 
+ * Ordem como as coisas acontecem
+ * Em uma mesma area de forma paralela
+ * Separar por areas(Swing Areas)
+ 
+# Origem dos eventos
+ * De onde os eventos devem surgir?
+  º Pode acontecer atraves de uma acao executada por um cliente
+  º Atraves de um cliente externo
+  º Existem eventos que sao gerados atraves do tempo
+  º Atraves de uma policy
+
+# Formação de agregados
+ * 
+
+
+ Boudned contexts => contextos delimitados
+ 
+ Hotspot -> nem todo mundo concorda com ela
+
+ Arrow Voting => a tomada de decisao para esses problemas podem ser baseadas em votos, 
+ qual a prioridade?
+
+
+# Flow 
+ => Flow of time 
+  ator ler e executa

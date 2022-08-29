@@ -1,0 +1,10 @@
+Desloque a responsabilidade de criar instancias de objetos complexos e AGREGADOS para um objeto sperado,
+que pode nao ter responsabilidade no modelo de dominio, mas ainda faz parte do design do dominio.
+Forneça uma interface que encapsule toda a criação complexa e que não exija que o cliente faça 
+referência ás classes concretas dos objetos que estão sendo instanciados.
+Crie AGGREGATES inteiros de uma única vez, reforçando suas invariantes.
+
+Design patter criacional
+factory method => vai criar os objetos em uma chamada
+abstract factory => ajuda a tomar decisoes
+
